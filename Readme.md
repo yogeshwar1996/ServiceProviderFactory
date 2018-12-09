@@ -1,1 +1,1 @@
-#Service versus Provider versus Factory
+Service versus Provider versus Factory
