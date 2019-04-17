@@ -4,6 +4,7 @@ var app = angular.module('myApp', []);
 app.controller('myServiceCtrl', function($scope, myService){
   $scope.data = {};
   $scope.updateArtist = function(){
+    console.log("on ng-change ", $scope.data.artist);
     myService.setArtist($scope.data.artist);
   };
 

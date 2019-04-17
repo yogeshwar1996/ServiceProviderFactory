@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
   <head>
-
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
   </head>
-  <body>
+  <body class="container">
     <div ng-controller="myServiceCtrl">
     <h1> Service </h1>
-      Pick your Arist: <input type="text" ng-model="data.artist" placeholder="Artist" ng-change="updateArtist()">
+      Pick your Arist:
+      <input type="text"
+             ng-model="data.artist"
+             placeholder="Artist"
+             ng-change="updateArtist()">
       <button ng-click="submitArtist()">Submit</button>
-      {{data.artistData}}
+      <pre ng-show="data.artistData">{{data.artistData|json}}</pre>
     </div>
 
     <div ng-controller="myFactoryCtrl">
     <h1>Factory</h1>
-      Pick your Arist: <input type="text" ng-model="data.artist" placeholder="Artist" ng-change="updateArtist()">
+      Pick your Arist:
+      <input type="text"
+             ng-model="data.artist"
+             placeholder="Artist"
+             ng-change="updateArtist()">
       <button ng-click="submitArtist()">Submit</button>
       {{data.artistData}}
     </div>
 
     <div ng-controller="myProviderCtrl">
     <h1>Provider</h1>
-    <h3>*Provider is the only service we can inject to the config function and establish an initial value. For example, if you wanted to inject your API key into your service at run time, you would have to use Provider. *The sentence below was set in the config function</h3>
-      Pick your Arist: <input type="text" ng-model="data.artist" placeholder="Artist" ng-change="updateArtist()">
+
+      Pick your Arist:
+      <input type="text"
+             ng-model="data.artist"
+             placeholder="Artist"
+             ng-change="updateArtist()">
       <button ng-click="submitArtist()">Submit</button>
       {{data.artistData}}
 
       <br>
+      <h3>
+      *Provider is the only service we can inject to the config function and establish an initial value.<br>
+      For example, if you wanted to inject your API key into your service at run time,
+      you would have to use Provider.<br>
+      *The sentence below was set in the config function
+      </h3>
       {{data.thingFromConfig}}
     </div>
 
